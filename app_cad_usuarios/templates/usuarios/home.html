@@ -1,0 +1,13 @@
+{% extends 'usuarios/base.html '%} <!-- Trás o  template base para essa página -->
+{% block conteudo %} <!-- declara o template -->
+    <!-- Formulário do cadastro -->
+    <form action="{% url 'listagem_usuarios' %}" method="post"> <!-- Envia a informação para a URL indicada -->
+        {% csrf_token %}
+        <div style="text-align: center; " class="container">
+            <h1>Cadastro de Usuários:</h1>
+            Nome <input name="nome" class="form-control-sm" type="text">
+            Idade <input name="idade" class="form-control-sm" type="text">
+            <button class="form-control-sm">Enviar</button>
+        </div>
+    </form>
+{% endblock %} <!-- fecha o template -->
